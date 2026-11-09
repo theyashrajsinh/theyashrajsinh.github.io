@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yashrajsinh Chauhan | Project Engineer, Power Automation</title>
+<meta name="description" content="Project engineer with 12 years delivering power management and substation automation projects, seeking project, product and engineering management roles.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yashrajsinh Chauhan | Project Engineer, Power Automation">
+<meta property="og:description" content="Project engineer with 12 years delivering power management and substation automation projects, seeking project, product and engineering management roles.">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: engineering drawing sheet. Title block hero with a live single-line diagram, then ruled sections with drawing-style labels. */
+:root{
+  --sheet:#eef1f3;
+  --panel:#f9fafb;
+  --ink:#14222e;
+  --muted:#53646f;
+  --rule:#b9c5cc;
+  --blue:#0b5fa5;
+  --blue-soft:#dbe9f5;
+  --trip:#c2362b;
+  --f-display:'Barlow Condensed','Arial Narrow',sans-serif;
+  --f-body:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --sheet:#0d1822;--panel:#132230;--ink:#e0e9f0;--muted:#92a5b3;--rule:#2c4152;--blue:#63b3f2;--blue-soft:#17344d;--trip:#ff7a6b;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --sheet:#0d1822;--panel:#132230;--ink:#e0e9f0;--muted:#92a5b3;--rule:#2c4152;--blue:#63b3f2;--blue-soft:#17344d;--trip:#ff7a6b;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--sheet);color:var(--ink);font:16px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+.wrap{max-width:1080px;margin:0 auto}
+a{color:var(--blue)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.05;margin:0;text-wrap:balance}
+.label{font:500 12px/1.2 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+.bar{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;align-items:center;padding-block:18px;border-bottom:1px solid var(--rule)}
+.bar strong{font-family:var(--f-display);font-size:22px;letter-spacing:.02em}
+.bar nav{display:flex;flex-wrap:wrap;gap:6px 20px}
+.bar nav a{font:500 12px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent}
+.bar nav a:hover{border-color:var(--blue)}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;padding-block:56px 48px;align-items:center}
+.hero h1{font-size:clamp(52px,9vw,96px);letter-spacing:-.005em;text-transform:uppercase}
+.hero h1 span{color:var(--blue)}
+.hero p.lede{font-size:18px;max-width:52ch;margin:20px 0 28px}
+.titleblock{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--ink);background:var(--panel)}
+.titleblock div{padding:10px 14px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);min-width:0}
+.titleblock div:nth-child(2n){border-right:0}
+.titleblock div:nth-last-child(-n+2){border-bottom:0}
+.titleblock b{display:block;font-weight:500;font-size:15px;overflow-wrap:anywhere}
+.diagram{background:var(--panel);border:1px solid var(--ink);padding:14px}
+.diagram svg{display:block;width:100%;height:auto}
+.diagram figcaption{margin-top:8px}
+
+.ln{stroke:var(--ink);stroke-width:2;fill:none}
+.bus{stroke:var(--blue);stroke-width:6;stroke-linecap:square}
+.dev{fill:var(--panel);stroke:var(--ink);stroke-width:2}
+.brk{fill:var(--ink);stroke:var(--ink)}
+.ied{fill:var(--blue-soft);stroke:var(--blue);stroke-width:1.5}
+.comm{stroke:var(--blue);stroke-width:1.5;stroke-dasharray:5 4;fill:none;animation:flow 1.4s linear infinite}
+.t{font:500 11px var(--f-mono);fill:var(--ink)}
+.t2{font:500 10px var(--f-mono);fill:var(--muted);letter-spacing:.05em}
+.tb{font:500 10px var(--f-mono);fill:var(--blue);letter-spacing:.05em}
+@keyframes flow{to{stroke-dashoffset:-18}}
+@media (prefers-reduced-motion:reduce){.comm{animation:none}}
+
+section{padding-block:56px;border-top:1px solid var(--rule)}
+.head{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:16px 40px;margin-bottom:32px}
+.head h2{font-size:clamp(34px,5vw,48px);text-transform:uppercase}
+.head p{margin:0;max-width:62ch;color:var(--muted)}
+.sheetno{margin-bottom:10px}
+
+.matrix{display:grid;border:1px solid var(--ink);background:var(--panel)}
+.row{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);border-bottom:1px solid var(--rule)}
+.row:last-child{border-bottom:0}
+.row>div{padding:14px 16px;min-width:0}
+.row>div:first-child{border-right:1px solid var(--rule)}
+.row h3{font-size:22px}
+.row .label{margin-top:4px;display:block;letter-spacing:.06em}
+.row p{margin:0;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.chips span{font:500 13px var(--f-mono);padding:4px 10px;border:1px solid var(--blue);color:var(--ink);background:var(--blue-soft)}
+.chips.plain span{border-color:var(--rule);background:transparent}
+.sub{margin-top:12px}
+
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--ink);background:var(--panel)}
+.phase{padding:20px 18px;border-right:1px solid var(--rule);min-width:0}
+.phase:last-child{border-right:0}
+.phase .label{color:var(--blue)}
+.phase h3{font-size:28px;margin:8px 0 10px}
+.phase ul{margin:0;padding-left:18px;font-size:15px}
+.phase li{margin-bottom:4px}
+
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.zones{border:1px solid var(--ink);background:var(--panel);padding:18px;align-self:start}
+.zone{border:1.5px dashed var(--rule);padding:10px 12px;margin-bottom:10px;font:500 13px var(--f-mono)}
+.zone:last-of-type{margin-bottom:0}
+.zone.hot{border-color:var(--trip)}
+.zone small{display:block;color:var(--muted);font-weight:400;margin-top:2px}
+.conduit{text-align:center;font:500 11px var(--f-mono);color:var(--blue);letter-spacing:.1em;margin:-4px 0 6px}
+.zones .label{margin-top:14px}
+.list{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.list li{padding-left:18px;position:relative}
+.list li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:2px;background:var(--blue)}
+.list b{font-weight:600}
+
+.tl{display:grid;border:1px solid var(--ink);background:var(--panel)}
+.job{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);border-bottom:1px solid var(--rule)}
+.job:last-child{border-bottom:0}
+.job>div{padding:18px 16px;min-width:0}
+.job>div:first-child{border-right:1px solid var(--rule)}
+.job h3{font-size:26px;margin-bottom:4px}
+.job .co{font:500 13px var(--f-mono);color:var(--blue)}
+.job ul{margin:10px 0 0;padding-left:18px}
+.job li{margin-bottom:4px}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px}
+.cols h3{font-size:26px;margin-bottom:10px}
+.cols p{margin:0 0 10px}
+.cols ul{margin:0;padding-left:18px}
+.cols li{margin-bottom:6px}
+
+.contact{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:start}
+.contact h2{font-size:clamp(40px,7vw,72px);text-transform:uppercase}
+.contact dl{margin:0;border:1px solid var(--ink);background:var(--panel)}
+.contact dl div{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--rule)}
+.contact dl div:last-child{border-bottom:0}
+.contact dd{margin:0;font-family:var(--f-mono);font-size:14px;overflow-wrap:anywhere}
+footer{padding-block:24px 40px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media (max-width:860px){
+  .hero,.head,.split,.contact{grid-template-columns:minmax(0,1fr)}
+  .cols{grid-template-columns:minmax(0,1fr)}
+  .phases{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .phase:nth-child(2){border-right:0}
+  .phase:nth-child(-n+2){border-bottom:1px solid var(--rule)}
+}
+@media (max-width:560px){
+  .row,.job{grid-template-columns:minmax(0,1fr)}
+  .row>div:first-child,.job>div:first-child{border-right:0;border-bottom:1px solid var(--rule)}
+  .phases{grid-template-columns:minmax(0,1fr)}
+  .phase{border-right:0;border-bottom:1px solid var(--rule)}
+  .phase:last-child{border-bottom:0}
+  .titleblock{grid-template-columns:minmax(0,1fr)}
+  .titleblock div{border-right:0}
+  .titleblock div:nth-last-child(2){border-bottom:1px solid var(--rule)}
+  .hero{padding-block:36px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <strong>YASHRAJSINH CHAUHAN</strong>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#protocols">Protocols</a>
+      <a href="#delivery">Delivery</a>
+      <a href="#security">OT Security</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <div class="label sheetno">Project Engineer · Industrial Automation</div>
+      <h1>Power<br>management &amp; <span>substation</span> automation</h1>
+      <p class="lede">Twelve years in industrial automation, specialising in Power Management Systems, IEC 61850 and ABB 800xA DCS. I plan, engineer, test and commission HV, MV and LV switchboards for onshore and offshore projects, with site execution across several countries.</p>
+      <div class="titleblock" role="list">
+        <div role="listitem"><span class="label">Experience</span><b>12 years at ABB</b></div>
+        <div role="listitem"><span class="label">Specialism</span><b>PMS · IEC 61850 · 800xA DCS</b></div>
+        <div role="listitem"><span class="label">Delivery</span><b>Engineering · FAT · SAT · Commissioning</b></div>
+        <div role="listitem"><span class="label">Next step</span><b>Senior / lead role</b></div>
+      </div>
+    </div>
+
+    <figure class="diagram" style="margin:0">
+      <svg viewBox="0 0 520 380" role="img" aria-label="Single-line diagram of a switchboard with protection relays on an IEC 61850 network connected to a DCS">
+        <text class="t2" x="20" y="18">INCOMER</text>
+        <line class="ln" x1="60" y1="26" x2="60" y2="52"/>
+        <rect class="brk" x="53" y="52" width="14" height="14"/>
+        <line class="ln" x1="60" y1="66" x2="60" y2="88"/>
+        <circle class="dev" cx="60" cy="102" r="16"/><circle class="dev" cx="60" cy="122" r="16"/>
+        <text class="t2" x="84" y="108">TRAFO</text>
+        <line class="ln" x1="60" y1="138" x2="60" y2="160"/>
+        <rect class="brk" x="53" y="160" width="14" height="14"/>
+        <line class="ln" x1="60" y1="174" x2="60" y2="190"/>
+        <line class="bus" x1="30" y1="190" x2="490" y2="190"/>
+        <text class="t2" x="400" y="180">SWITCHBOARD BUS</text>
+        <line class="ln" x1="150" y1="190" x2="150" y2="214"/><rect class="brk" x="143" y="214" width="14" height="14"/><line class="ln" x1="150" y1="228" x2="150" y2="250"/>
+        <line class="ln" x1="270" y1="190" x2="270" y2="214"/><rect class="brk" x="263" y="214" width="14" height="14"/><line class="ln" x1="270" y1="228" x2="270" y2="250"/>
+        <line class="ln" x1="390" y1="190" x2="390" y2="214"/><rect class="brk" x="383" y="214" width="14" height="14"/><line class="ln" x1="390" y1="228" x2="390" y2="250"/>
+        <text class="t2" x="150" y="268" text-anchor="middle">FEEDER</text>
+        <text class="t2" x="270" y="268" text-anchor="middle">GENERATOR</text>
+        <text class="t2" x="390" y="268" text-anchor="middle">MOTOR LOAD</text>
+        <rect class="ied" x="108" y="296" width="84" height="26"/><text class="t" x="150" y="313" text-anchor="middle">IED</text>
+        <rect class="ied" x="228" y="296" width="84" height="26"/><text class="t" x="270" y="313" text-anchor="middle">IED</text>
+        <rect class="ied" x="348" y="296" width="84" height="26"/><text class="t" x="390" y="313" text-anchor="middle">IED</text>
+        <line class="comm" x1="108" y1="338" x2="432" y2="338"/>
+        <line class="comm" x1="150" y1="322" x2="150" y2="338"/>
+        <line class="comm" x1="270" y1="322" x2="270" y2="338"/>
+        <line class="comm" x1="390" y1="322" x2="390" y2="338"/>
+        <text class="tb" x="108" y="356">IEC 61850 NETWORK</text>
+        <text class="tb" x="432" y="356" text-anchor="end">→ 800xA DCS / PMS</text>
+      </svg>
+      <figcaption class="label">Fig. 1 · Illustrative scope: switchboard IEDs on an IEC 61850 network feeding the DCS</figcaption>
+    </figure>
+  </div>
+
+  <section id="about">
+    <div class="head" style="margin-bottom:0">
+      <div><div class="label sheetno">Profile</div><h2>About me</h2></div>
+      <p style="color:var(--ink);font-size:18px;max-width:66ch">I'm a project engineer with twelve years at ABB, where I started as a diploma trainee in 2014. I now run power management and substation automation projects from customer requirements through to commissioning and handover, for onshore and offshore customers including FPSOs, LNG and process plants across Asia, the Middle East, South America and Europe. I plan and schedule the work, track cost and quality, manage risk, and coordinate clients, contractors and engineering teams, often across several projects at once. My technical base is IEC 61850, ABB 800xA DCS and Power Management Systems, with OT cyber security practice under IEC 62443, and I train engineers and operators. I'm looking to move into a higher role in project engineering, product engineering or project management, where I can own delivery, develop teams and shape how complex systems are built.</p>
+    </div>
+  </section>
+
+  <section id="leadership">
+    <div class="head">
+      <div><div class="label sheetno">Management</div><h2>Project leadership</h2></div>
+      <p>The management side of twelve years of delivery, from planning to close-out.</p>
+    </div>
+    <div class="cols">
+      <div><h3>Planning &amp; scheduling</h3><p>Project planning and scheduling, priorities for engineering and commissioning teams, regular progress reports and commissioning protocols and procedures.</p></div>
+      <div><h3>Cost, quality &amp; risk</h3><p>Detailed cost and quality records, cost control and budget monitoring, and risk management and mitigation across the project lifecycle.</p></div>
+      <div><h3>Customers &amp; stakeholders</h3><p>Turns customer requirements into DCS, PLC and SCADA solutions, coordinates clients, contractors and stakeholders, and manages site and customer relationships.</p></div>
+      <div><h3>Teams &amp; training</h3><p>Resource planning and team coordination, plus structured training for engineers, technicians and control room operators.</p></div>
+      <div><h3>Multiple projects</h3><p>Led complete project lifecycles across several simultaneous projects, from planning to close-out, with cross-functional coordination.</p></div>
+      <div><h3>International delivery</h3><p>Site execution in overseas countries, including Qatar, Indonesia, Guyana, Norway and Brunei, on offshore and onshore projects.</p></div>
+    </div>
+  </section>
+
+  <section id="protocols">
+    <div class="head">
+      <div><div class="label sheetno">Sheet 01</div><h2>Protocols &amp; platforms</h2></div>
+      <p>Communication protocols, networks, control platforms and tools used across PMS and substation projects.</p>
+    </div>
+    <div class="matrix">
+      <div class="row"><div><h3>Substation</h3><span class="label">IEC 61850 and telecontrol</span></div>
+        <div>
+          <div class="chips"><span>IEC 61850</span><span>IEC 60870-5-101</span><span>IEC 60870-5-104</span></div>
+          <div class="chips plain sub"><span>CET</span><span>IET600</span><span>CCT600</span><span>PCM600</span><span>ITT synthesizer</span><span>IEC Browser</span></div>
+        </div></div>
+      <div class="row"><div><h3>Industrial &amp; field</h3><span class="label">Plant communication</span></div>
+        <div class="chips"><span>Modbus TCP/IP</span><span>Modbus RTU</span><span>Profinet</span><span>TCP/IP</span><span>OPC DA/AE</span><span>OPC UA</span><span>RS232 / RS485</span><span>Hardwired I/O</span></div></div>
+      <div class="row"><div><h3>Network</h3><span class="label">Redundancy and diagnostics</span></div>
+        <div>
+          <div class="chips"><span>RSTP</span><span>PRP</span><span>HSR</span><span>VLAN segmentation</span></div>
+          <div class="chips plain sub"><span>Hirschmann</span><span>Ruggedcom</span><span>Wireshark</span><span>Nmap</span></div>
+        </div></div>
+      <div class="row"><div><h3>DCS &amp; PLC</h3><span class="label">ABB platform</span></div>
+        <div>
+          <div class="chips"><span>800xA 6.1 / 6.0</span><span>800xA 5.1 FP4 RevD / 5.0</span><span>AC800M</span><span>S800 I/O</span><span>IEC 61131-3: FBD · ST · SFC</span></div>
+          <div class="chips plain sub"><span>Basic IEC61850 Library</span><span>MIDAS Library</span><span>Power Control Library</span><span>PPM Library</span></div>
+        </div></div>
+      <div class="row"><div><h3>Power management</h3><span class="label">PMS functions</span></div>
+        <p>Load shedding, load sharing, synchronisation, primary equipment controls and blackout start sequences, programmed with the PPM Library and tested in simulators (PPSim, 800xA Simulator, Kongsberg K-Spice).</p></div>
+      <div class="row"><div><h3>SCADA &amp; IEDs</h3><span class="label">Control centre and relays</span></div>
+        <div>
+          <div class="chips"><span>MicroSCADA</span><span>RTU560</span><span>TMW SCADA Data Gateway</span><span>800xA Base</span></div>
+          <div class="chips plain sub"><span>ABB</span><span>Hitachi Energy</span><span>Siemens</span><span>Siemens Energy</span><span>Micom</span><span>SEL</span></div>
+        </div></div>
+    </div>
+  </section>
+
+  <section id="delivery">
+    <div class="head">
+      <div><div class="label sheetno">Sheet 02</div><h2>Project delivery</h2></div>
+      <p>Hands-on across the full project cycle, from the design office to site handover, including planning, scheduling, cost tracking and risk management.</p>
+    </div>
+    <div class="phases">
+      <div class="phase"><span class="label">Phase 1</span><h3>Engineering</h3>
+        <ul><li>Customer requirements into DCS, PLC and SCADA solutions</li><li>FDS and project schedules under QMS</li><li>Application programming and HMI graphics</li><li>IEC 61850 and Modbus engineering</li></ul></div>
+      <div class="phase"><span class="label">Phase 2</span><h3>FAT</h3>
+        <ul><li>Hardware, remote I/O, switch and SCADA cabinets</li><li>FAT procedures and documentation</li><li>PMS application testing in PPSim</li><li>Mode-transition testing</li></ul></div>
+      <div class="phase"><span class="label">Phase 3</span><h3>SAT</h3>
+        <ul><li>Hardware and software integration testing</li><li>Network switch configuration and domain setup</li><li>Cybersecurity checks</li><li>Project progress reports</li></ul></div>
+      <div class="phase"><span class="label">Phase 4</span><h3>Commissioning</h3>
+        <ul><li>Site commissioning of HV, MV and LV switchboards</li><li>Commissioning protocols and procedures</li><li>Post-commissioning support and punch-point closure</li><li>Operator and engineer training</li></ul></div>
+    </div>
+  </section>
+
+  <section id="security">
+    <div class="head">
+      <div><div class="label sheetno">Sheet 03</div><h2>OT cyber security</h2></div>
+      <p>Security work carried out on live DCS and PMS projects, backed by Cisco networking and cyber security training.</p>
+    </div>
+    <div class="split">
+      <div class="zones" aria-label="Illustration of network zones separated by conduits">
+        <div class="zone hot">Corporate network<small>Outside the control system</small></div>
+        <div class="conduit">▼ CONTROLLED CONDUIT ▼</div>
+        <div class="zone">Control zone<small>DCS servers, operator and engineering stations</small></div>
+        <div class="conduit">▼ CONTROLLED CONDUIT ▼</div>
+        <div class="zone">Field zone<small>Controllers, IEDs, network switches</small></div>
+        <div class="label">Illustration · zones and conduits</div>
+      </div>
+      <ul class="list">
+        <li><b>IEC 62443 compliance.</b> Conducted and supported compliance actions on DCS and PMS projects.</li>
+        <li><b>System hardening.</b> Closed DCS hardening punch points during post-commissioning support.</li>
+        <li><b>Network diagnostics.</b> Wireshark and Nmap for troubleshooting and verification.</li>
+        <li><b>Segmentation and redundancy.</b> VLAN segmentation and RSTP, PRP and HSR on Hirschmann and Ruggedcom switches.</li>
+        <li><b>Project security checks.</b> Cybersecurity checks and domain setup on the Oseberg PFS project.</li>
+        <li><b>Training.</b> Cisco Certified Network Associate Industrial and a Cisco cyber security course.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="head">
+      <div><div class="label sheetno">Sheet 04</div><h2>Experience</h2></div>
+      <p>Twelve years at ABB GISPL, growing from trainee to project engineer.</p>
+    </div>
+    <div class="tl">
+      <div class="job"><div><span class="label">Dec 2021 – Present</span></div>
+        <div><h3>Project Engineer</h3><span class="co">ABB GISPL</span>
+        <ul>
+          <li>Engineering, testing, installation, commissioning and remote support for PMS and DCS systems on global projects with HV, MV and LV switchgear.</li>
+          <li>Executed PMS engineering, testing and commissioning on onshore and offshore PDCS/PMS projects, with onsite and remote support during shutdowns and operations.</li>
+          <li>Led full project lifecycles across several simultaneous projects: planning, documentation, progress reports, cost and quality records, and engineering and commissioning team coordination.</li>
+          <li>Delivered structured training to engineers, technicians and control room operators.</li>
+        </ul></div></div>
+      <div class="job"><div><span class="label">Dec 2015 – Nov 2021</span></div>
+        <div><h3>Associate Project Engineer</h3><span class="co">ABB GISPL</span>
+        <ul>
+          <li>Application programming in IEC 61131-3 (FBD, ST, SFC) and HMI graphics for hardwired and Modbus RTU/TCP.</li>
+          <li>Hardware and software integration and testing with Modbus, Ethernet TCP/IP, IEC 61850, IEC 101/104, hardwired I/O and OPC.</li>
+          <li>IEC 61850 engineering, testing and commissioning for ECS, ENMCS and PMS systems on HV, MV and LV switchboards.</li>
+          <li>FAT, SAT and project documentation aligned with QMS standards.</li>
+        </ul></div></div>
+      <div class="job"><div><span class="label">Dec 2014 – Nov 2015</span></div>
+        <div><h3>Executive Diploma Trainee</h3><span class="co">ABB GISPL</span>
+        <ul>
+          <li>Trained on ABB DCS, PLC systems, communication protocols, interfaces and the project life cycle.</li>
+          <li>Assisted with engineering and testing on automation projects.</li>
+        </ul></div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="head">
+      <div><div class="label sheetno">Sheet 05</div><h2>Key projects</h2></div>
+      <p>Offshore platforms, FPSOs, LNG and onshore plants across Asia, the Middle East, South America and Europe.</p>
+    </div>
+    <div class="matrix">
+      <div class="row"><div><h3>Oseberg PFS</h3><span class="label">Norway</span></div><p>IEC 61850, Modbus, Profinet and hardwired engineering, testing and commissioning for 300 kV, 132 kV and 11 kV switchboards. Mode-transition testing, PMS engineering and testing, cybersecurity checks, network switch configuration and domain setup.</p></div>
+      <div class="row"><div><h3>Yellow Tail FPSO</h3><span class="label">Guyana</span></div><p>Led PMS engineering and HMI development for HV and LV switchboards, supported IEC 61850 and Modbus engineering, and tested the PMS application in PPSim.</p></div>
+      <div class="row"><div><h3>Liza-2 Unity FPSO</h3><span class="label">Guyana</span></div><p>Post-commissioning support: closed PMS punch points, delivered real-time customer training and resolved PMS functionality queries.</p></div>
+      <div class="row"><div><h3>ONGC 98/2 FPSO</h3><span class="label">Indonesia and India</span></div><p>Complete engineering and commissioning of 11 kV and 6.6 kV switchboards integrating hardwired, IEC 61850 and Modbus communication.</p></div>
+      <div class="row"><div><h3>BP Tangguh</h3><span class="label">Indonesia</span></div><p>Engineering and site commissioning for 33 kV and 6.6 kV switchboards (5 PESBs) with IEC 61850 and RTU560 integration.</p></div>
+      <div class="row"><div><h3>Brunei LNG</h3><span class="label">Brunei</span></div><p>Post-commissioning operational support, resolved DCS and system hardening punch points, and trained operators and engineers.</p></div>
+      <div class="row"><div><h3>New Port Project</h3><span class="label">Qatar</span></div><p>Led site commissioning and engineering of 22 kV switchboards with IEC 61850, Modbus and hardwired integration. Configured managed network switches and trained customer teams.</p></div>
+      <div class="row"><div><h3>QP HV SCADA</h3><span class="label">Qatar</span></div><p>Testing and commissioning of IEC 104 integration on 33 kV switchgear for CCR-based monitoring and control.</p></div>
+      <div class="row"><div><h3>QG ELICS Simulator Upgrade</h3><span class="label">Qatar</span></div><p>Developed and delivered project management documentation on schedule for customer review and approval.</p></div>
+      <div class="row"><div><h3>Banggai Ammonia Plant</h3><span class="label">Indonesia</span></div><p>IEC 61850 and Modbus engineering with dynamic HMI and graphic display creation.</p></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="head">
+      <div><div class="label sheetno">Sheet 06</div><h2>Education</h2></div>
+      <p>Electrical engineering from diploma to degree.</p>
+    </div>
+    <div class="matrix">
+      <div class="row"><div><h3>Bachelor of Electrical Engineering</h3><span class="label">Degree</span></div><p>RKDF University<br>Bhabha College of Engineering</p></div>
+      <div class="row"><div><h3>Diploma in Electrical Engineering</h3><span class="label">Diploma</span></div><p>Gujarat Technological University<br>Shri K. J. Polytechnic, Bharuch</p></div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="head">
+      <div><div class="label sheetno">Sheet 07</div><h2>People &amp; credentials</h2></div>
+      <p>Technical delivery depends on working well with customers, contractors and site teams.</p>
+    </div>
+    <div class="cols">
+      <div><h3>Working with people</h3>
+        <p>Communicates clearly at every level of an organisation, coordinates clients, contractors and stakeholders, and delivers training to engineers, technicians and control room operators.</p>
+        <p>Quick learner who works independently, plays well in teams and handles several priorities under deadlines.</p></div>
+      <div><h3>Management</h3>
+        <ul><li>Project planning and scheduling</li><li>Risk management and mitigation</li><li>Site and customer management</li><li>Cost control and budget monitoring</li><li>Resource planning and team coordination</li><li>Multi-project handling</li></ul></div>
+      <div><h3>Credentials</h3>
+        <ul>
+          <li>Cisco Certified Network Associate Industrial (CCNA)</li>
+          <li>Cisco course on cyber security</li>
+          <li>BOSIET, offshore safety induction</li>
+          <li>ECAP L3, Electrically Authorized Person</li>
+          <li>Lean Six Sigma Yellow Belt (IACET)</li>
+          <li>Course on Computer Concepts (CCC)</li>
+          <li>Languages: English, Hindi, Gujarati</li>
+        </ul></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <div class="label sheetno">Sheet 08</div>
+        <h2>Let's talk</h2>
+        <p style="max-width:44ch;color:var(--muted)">Open to higher roles in project management, project engineering and product engineering across power, energy and industrial automation. Connect with me on LinkedIn.</p>
+      </div>
+      <dl>
+        <div><dt class="label">LinkedIn</dt><dd><a href="https://www.linkedin.com/in/theyashrajsinh/">linkedin.com/in/theyashrajsinh</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <footer><span class="label">Yashrajsinh Chauhan · Project Engineer</span><span class="label">Rev. B</span></footer>
+</div>
+</body>
+</html>
